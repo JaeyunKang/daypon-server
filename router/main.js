@@ -534,33 +534,5 @@ module.exports = function(app)
     app.get('/kakaopay/cancel', function (req, res) {
     });
 
-    var fs = require('fs');
-    var PythonShell = require('python-shell').PythonShell;
-    app.post('/imageUpload', function (req, res) {
-        var key = req.body.key;
-        var img = req.body.img;
-        var style = req.body.style;
-        var path = '/home/ubuntu/web/public/portrait/' + key + '.jpg';
-        const decodedData = new Buffer(img, 'base64');
-        fs.writeFileSync(path, decodedData);
-
-        var options = {
-            mode: 'text',
-            pythonPath: '',
-            pythonOptions: ['-u'],
-            scriptPath: '',
-            args: [path, '/home/ubuntu/web/public/portrait/' + key + '_converted.jpg', style]
-        };
-        PythonShell.run('convert.py', options, function (err, results) {
-            if (err) throw err;
-            console.log(results);
-            var out_path = results;
-            var bitmap = fs.readFileSync(out_path[0]);
-            var outImg = new Buffer(bitmap).toString('base64');
-            console.log(outImg);
-            console.log(key);
-            res.send({'img': outImg, 'key': key});
-        });
-    });
 } 
 
