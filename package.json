@@ -1,0 +1,40 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "prography node.js web server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prography/web.git"
+  },
+  "author": "prography web",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prography/web/issues"
+  },
+  "homepage": "https://github.com/prography/web#readme",
+  "dependencies": {
+    "base64-to-image": "^1.0.2",
+    "compression": "^1.7.3",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-beta.3",
+    "date-utils": "^1.2.21",
+    "dateformat": "^3.0.3",
+    "ejs": "^2.5.9",
+    "express": "^4.16.3",
+    "express-fileupload": "^1.0.0-alpha.1",
+    "express-minify": "^1.0.0",
+    "express-minify-html": "^0.12.0",
+    "jquery": "^3.3.1",
+    "js-sha256": "^0.9.0",
+    "mysql": "^2.15.0",
+    "nodemailer": "^4.6.4",
+    "nodemon": "^1.18.3",
+    "params": "^0.1.1",
+    "python-shell": "^1.0.6",
+    "twilio": "^3.19.2"
+  }
+}
