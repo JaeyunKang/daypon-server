@@ -224,7 +224,11 @@ module.exports = function(app)
     };
     
     app.post('/version-check', function (req, res) {
-        res.send({"version": 2});
+        res.send({"version": 4});
+    });
+
+    app.post('/version-check-ios', function (req, res) {
+        res.send({"version": 1.0});
     });
 
     app.post('/email-check', function (req, res) {
