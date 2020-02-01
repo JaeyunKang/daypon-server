@@ -538,5 +538,23 @@ module.exports = function(app)
     app.get('/kakaopay/cancel', function (req, res) {
     });
 
+
+const getUserProfileAndMatchings = async (userId) => {
+  const user = await getUser(userId)
+  const userInfo = {
+    name: user.name,
+    phone: user.phone,
+    profileImg: user.profileImg
+  }
+  let teams = await getTeamsByUserId(userId)
+  const matchings = []
+  for (const team of teams) {
+    const matchingOfTeam = await getMatchingByTeamId(team.id)
+    matchings = matchings.concat(matchingOfTeam)
+  }
+  return { userInfo, matchings }
+}
+
+
 } 
 
